@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Members Only</a>
+    <div>
+      {{#if user}}
+        <a href="/join" class="btn btn-outline-success" type="button">Join the club</a>
+        {{else}}
+        <a href="/login" class="btn btn-outline-success" type="button">Login</a>
+        <a href="/sign-up" class="btn btn-outline-success" type="button">Sign-Up</a>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
+{{#if user}}
+<div class="card mx-auto p-5" style="width:70%">
+  <h1><a>Create new message</a></h1>
+<form method="POST" action="/">
+  <div class="mb-3">
+    <label for="subject" class="form-label">Message Subject</label>
+    <input name="subject" type="text" class="form-control" id="subject" placeholder="Message Subject">
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea name="message" class="form-control" id="message" rows="3" placeholder="Enter Message Here"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{{#if user.membershipStatus}}
+<h1>Full Membership</h1>
+{{/if}}
+
+<div class="container d-flex">
+  <h1 class="mx-auto">Messages</h1>
+</div>
+
+{{#if user.membershipStatus}}
+  {{#each messages}}
+  <div class="card mx-auto" style="width: 80%;">
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{this.user.username}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{this.date}}</h6>
+      <p class="card-text">{{this.message}}</p>
+    </div>
+  </div>
+  {{/each}}
+{{else}}
+  {{#each messages}}
+  <div class="card mx-auto" style="width: 80%;">
+    <div class="card-body">
+      <h5 class="card-title">{{this.title}}</h5>
+      <p class="card-text">{{this.message}}</p>
+    </div>
+  </div>
+  {{/each}}
+{{/if}}
+
+
+
+{{/if}}
+

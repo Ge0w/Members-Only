@@ -28,17 +28,15 @@
 </form>
 </div>
 
-{{#if user.membershipStatus}}
-<h1>Full Membership</h1>
-{{/if}}
+<hr>
 
-<div class="container d-flex">
+<div class="container d-flex pt-4">
   <h1 class="mx-auto">Messages</h1>
 </div>
 
 {{#if user.membershipStatus}}
   {{#each messages}}
-  <div class="card mx-auto" style="width: 80%;">
+  <div class="card mx-auto m-4" style="width: 70%;">
     <div class="card-body">
       <h5 class="card-title">{{this.title}}</h5>
       <h6 class="card-subtitle mb-2 text-muted">{{this.user.username}}</h6>

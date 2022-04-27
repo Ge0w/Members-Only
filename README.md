@@ -1,8 +1,8 @@
-# Members Only
+# The Message Board
 
 ## Overview
 
-This Members Only project is inspired by The Odin Project via. the NodeJS path. It is a message board where users can write anonymous posts. Anyone who has joined as a member can see who the author of the post is, whereas non-members can only see the message and the title.
+This Message Board project is inspired by The Odin Project via. the NodeJS path. It is a message board where users can write anonymous posts. Anyone who has joined as a member can see who the author of the post is, whereas non-members can only see the message and the title.
 
 If you have made it this far thank you for viewing the project - the password to 'Join the Club' is 'member'.
 
@@ -18,7 +18,7 @@ If you have made it this far thank you for viewing the project - the password to
 
 ### Live Version:
 
-[Members Only](https://membersonly.georgewalker.dev/)
+[The Message Board](https://membersonly.georgewalker.dev/)
 
 ### From the repo:
 
